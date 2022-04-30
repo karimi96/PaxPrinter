@@ -1,30 +1,25 @@
 package com.pax.demo;
 
-import androidx.annotation.RequiresApi;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.constraintlayout.widget.ConstraintLayout;
-
-import android.app.Activity;
 import android.content.Context;
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
-import android.util.Log;
 import android.view.View;
-import android.view.ViewGroup;
-import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.pax.dal.entity.EFontTypeAscii;
-import com.pax.dal.entity.EFontTypeExtCode;
+import androidx.annotation.RequiresApi;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
+
 import com.pax.demo.canvas.MyView3;
 import com.pax.demo.modules.printer.MyView2;
+import com.pax.demo.modules.printer.MyView5;
+import com.pax.demo.modules.printer.MyView6;
 import com.pax.demo.modules.printer.PrinterTester;
-import com.pax.demo.util.Convert;
+
 
 public class MainActivity extends AppCompatActivity {
     TextView tt;
@@ -32,23 +27,30 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main2);
+        MyView6 myView6 = new MyView6(this);
+        setContentView(myView6);
+
+//        setContentView(R.layout.activity_main2);
 
 
-
-        tt = findViewById(R.id.click);
+      /*  tt = findViewById(R.id.click);
         tt.setOnClickListener(view -> {
             new Thread(new Runnable() {
                 @RequiresApi(api = Build.VERSION_CODES.M)
                 public void run() {
-                    MyView2 myView2 = new MyView2(MainActivity.this);
+//                    MyView2 myView2 = new MyView2(MainActivity.this);
+                    MyView3 myView3 = new MyView3(MainActivity.this);
+
+
+//                    MyView3 myView3 = new MyView3(MainActivity.this);
+//                    MyView5 myView5 = new MyView5(MainActivity.this);
                     ImageView imageView = findViewById(R.id.image);
 
                     runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
-                            imageView.setImageBitmap(getBitmapFromView(MainActivity.this, myView2));
-                            PrinterTester.getInstance().printBitmap(getBitmapFromView(MainActivity.this, myView2));
+                            imageView.setImageBitmap(getBitmapFromView(MainActivity.this, myView3));
+                            PrinterTester.getInstance().printBitmap(getBitmapFromView(MainActivity.this, myView3));
                         }
                     });
                 PrinterTester.getInstance().start();
@@ -56,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
                 }
             }).start();
 
-        });
+        });*/
 
 
 
