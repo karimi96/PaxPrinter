@@ -22,14 +22,15 @@ public class MyView2 extends View {
     Drawable imageShaprak, imageIranKish, imagePhone;
 
 
+
     public MyView2(Context context) {
         super(context);
         this.context = context;
         paint = new Paint();
 
-        imageShaprak = context.getResources().getDrawable(R.drawable.ic_launcher_background);
-        imageIranKish = context.getResources().getDrawable(R.drawable.ic_launcher_foreground);
-//        imagePhone = context.getResources().getDrawable(R.drawable.phone_call);
+        imageShaprak = context.getResources().getDrawable(R.drawable.ic_shaparak);
+        imageIranKish = context.getResources().getDrawable(R.drawable.irankish2);
+        imagePhone = context.getResources().getDrawable(R.drawable.phone_call);
 
     }
 
@@ -61,7 +62,7 @@ public class MyView2 extends View {
         canvas.drawLine(0, s + (oy / 3), x, s + (oy / 3), paint);
         canvas.drawLine(0, s + (oy * 2 / 3) + 25, x, s + (oy * 2 / 3) + 25, paint);
         canvas.drawLine(0, s + (oy * 11) / 18 + 15, x, s + (oy * 11) / 18 + 15, paint);
-        canvas.drawLine(0, s + (oy * 15.5f) / 18 + 15, x, s + (oy * 15.5f) / 18 + 15, paint);
+        canvas.drawLine(0, s + (oy * 15.5f) / 18 + 25, x, s + (oy * 15.5f) / 18 + 25, paint);
 
         // for image
         Rect imageBounds = canvas.getClipBounds();
@@ -73,12 +74,12 @@ public class MyView2 extends View {
         imageIranKish.setBounds(imageBounds);
         imageIranKish.draw(canvas);
 
-//        imageBounds.set((1 * x) / 2 - 65, (int) (s + (oy * 4) / 18), (1 * x) / 2 - 40, (int) (s + (4.6 * oy / 18)));
-//        imagePhone.setBounds(imageBounds);
-//        imagePhone.draw(canvas);
+        imageBounds.set((1 * x) / 2 - 65, (int) (s + (oy * 4) / 18), (1 * x) / 2 - 40, (int) (s + (4.6 * oy / 18)));
+        imagePhone.setBounds(imageBounds);
+        imagePhone.draw(canvas);
 
 
-        setText(Color.BLACK, 25, Paint.Align.CENTER, typefaceNormal, "کارت اعتباری ایران کیش", x / 2, (int) (s + (oy * 3.3) / 18), paint, canvas);
+        setText(Color.BLACK, 25, Paint.Align.CENTER, typefaceText, "کارت اعتباری ایران کیش", x / 2, (int) (s + (oy * 3.3) / 18), paint, canvas);
         setText(Color.BLACK, 29, Paint.Align.CENTER, typefaceNumber, "1688", x / 2, s + (oy * 4.5f) / 18, paint, canvas);
 
         setText(Color.BLACK, 28, Paint.Align.RIGHT, typefaceNormal, "تست شاپ", x - 20, s + (oy * 5.6f) / 18, paint, canvas);
@@ -128,7 +129,7 @@ public class MyView2 extends View {
         myStaticLayout.draw(canvas);
         canvas.restore();
 
-        setText(Color.BLACK, 28, Paint.Align.CENTER, typefaceNumberNormal, "9284584/85  4838/345", x / 2, s + (oy * 16.7f) / 18, paint, canvas);
+        setText(Color.BLACK, 28, Paint.Align.CENTER, typefaceNumberNormal, "9284584/85  4838/345", x / 2, s + (oy * 16.9f) / 18, paint, canvas);
     }
 
 
