@@ -23,6 +23,7 @@ public class MyView5 extends View {
     Paint mPaintTitle;
     Paint mPaintAllText;
     Paint mPaintLine;
+    Paint mPaintBack;
 
 
     int x;
@@ -38,6 +39,7 @@ public class MyView5 extends View {
         mPaintTitle = new Paint();
         mPaintAllText = new Paint();
         mPaintLine = new Paint();
+        mPaintBack = new Paint();
     }
 
 
@@ -50,6 +52,10 @@ public class MyView5 extends View {
         mCanvas = canvas;
         fontIranSans = Typeface.create(Typeface.createFromAsset(context.getAssets(), "fonts/iran_sans.ttf"), Typeface.BOLD);
         typefaceNastaliq = Typeface.create(Typeface.createFromAsset(context.getAssets(), "fonts/IranNastaliq.ttf"), Typeface.BOLD);
+
+        mPaintBack.setStyle(Paint.Style.FILL);
+        mPaintBack.setColor(Color.WHITE);
+        canvas.drawPaint(mPaintBack);
 
 
         Rect imageBounds = canvas.getClipBounds();
@@ -149,7 +155,7 @@ public class MyView5 extends View {
 
     private Paint intiPaintLine() {
         mPaintLine.setColor(Color.BLACK);
-        mPaintLine.setStrokeWidth(1);
+        mPaintLine.setStrokeWidth(6);
         return mPaintLine;
     }
 

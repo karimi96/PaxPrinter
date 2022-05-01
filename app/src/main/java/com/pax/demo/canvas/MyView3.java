@@ -19,6 +19,7 @@ public class MyView3 extends View {
     Paint mPaintNormal;
     Paint mPaintLine;
     Paint paint;
+    Paint mPaintBack;
     Typeface typefaceText;
 
     int x;
@@ -34,6 +35,7 @@ public class MyView3 extends View {
         mPaintNormal = new Paint();
         mPaintLine = new Paint();
         paint = new Paint();
+        mPaintBack = new Paint();
 
         imagePhone = context.getResources().getDrawable(R.drawable.phone_call);
 
@@ -49,12 +51,16 @@ public class MyView3 extends View {
         Typeface typefaceNastaliq = Typeface.create(Typeface.createFromAsset(context.getAssets(), "fonts/IranNastaliq.ttf"), Typeface.BOLD);
 
 
+        mPaintBack.setStyle(Paint.Style.FILL);
+        mPaintBack.setColor(Color.WHITE);
+        canvas.drawPaint(mPaintBack);
+
         paint.setColor(Color.BLACK);
         paint.setTextSize(80);
         paint.setTextAlign(Paint.Align.RIGHT);
         paint.setTypeface(typefaceNastaliq);
 
-        canvas.drawText("فروشگاه رفاه", x - 30, 150 , paint);
+        canvas.drawText("فروشگاه رفاه", x - 30, 170 , paint);
 
 
         initText("1401/02/7", 30, 120, Paint.Align.LEFT);
@@ -62,7 +68,7 @@ public class MyView3 extends View {
         initText("09121312234", 72, 200, Paint.Align.LEFT);
 
         Rect imageBounds = canvas.getClipBounds();
-        imageBounds.set(30,175, x/11 -5, y/2 - 415 );
+        imageBounds.set(30,175, x/11 -5, y/2 - 435 );
         imagePhone.setBounds(imageBounds);
         imagePhone.draw(canvas);
 
@@ -149,7 +155,7 @@ public class MyView3 extends View {
 
     private Paint intiPaintLine() {
         mPaintLine.setColor(Color.BLACK);
-        mPaintLine.setStrokeWidth(1);
+        mPaintLine.setStrokeWidth(6);
         return mPaintLine;
     }
 

@@ -25,6 +25,7 @@ public class MyView6 extends View {
     Paint mPaintAllText;
     Paint mPaintLine;
     Paint mPaintRect;
+    Paint mPaintBack;
 
 
     int x;
@@ -41,6 +42,7 @@ public class MyView6 extends View {
         mPaintAllText = new Paint();
         mPaintLine = new Paint();
         mPaintRect = new Paint();
+        mPaintBack = new Paint();
     }
 
 
@@ -53,6 +55,10 @@ public class MyView6 extends View {
         mCanvas = canvas;
         fontIranSans = Typeface.create(Typeface.createFromAsset(context.getAssets(), "fonts/iran_sans.ttf"), Typeface.BOLD);
         typefaceNastaliq = Typeface.create(Typeface.createFromAsset(context.getAssets(), "fonts/IranNastaliq.ttf"), Typeface.BOLD);
+
+        mPaintBack.setStyle(Paint.Style.FILL);
+        mPaintBack.setColor(Color.WHITE);
+        canvas.drawPaint(mPaintBack);
 
 
         Rect imageBounds = canvas.getClipBounds();
@@ -91,15 +97,15 @@ public class MyView6 extends View {
         setRect(y-400,y-145);
 
 
-        initText("قیمت خرید :", x - 60, y- 300, Paint.Align.RIGHT);
-        initText("مالیات :", x - 60, y-250, Paint.Align.RIGHT);
-        initText("تخفیف :", x - 60, y-200, Paint.Align.RIGHT);
-        initText("مبلغ کل :", x - 60, y-150, Paint.Align.RIGHT);
+        initText("قیمت خرید :", x - 60, y- 350, Paint.Align.RIGHT);
+        initText("مالیات :", x - 60, y-300, Paint.Align.RIGHT);
+        initText("تخفیف :", x - 60, y-250, Paint.Align.RIGHT);
+        initText("مبلغ کل :", x - 60, y-200, Paint.Align.RIGHT);
 
-        initText("65000", 60, y- 300, Paint.Align.LEFT);
-        initText("12000", 60, y-250, Paint.Align.LEFT);
-        initText("5000", 60, y-200, Paint.Align.LEFT);
-        initText("67000", 60, y-150 , Paint.Align.LEFT);
+        initText("65000", 60, y- 350, Paint.Align.LEFT);
+        initText("12000", 60, y-300, Paint.Align.LEFT);
+        initText("5000", 60, y-250, Paint.Align.LEFT);
+        initText("67000", 60, y-200 , Paint.Align.LEFT);
 
 
         initLines(y - 100);
@@ -152,7 +158,7 @@ public class MyView6 extends View {
 
     private Paint intiPaintLine() {
         mPaintLine.setColor(Color.BLACK);
-        mPaintLine.setStrokeWidth(1);
+        mPaintLine.setStrokeWidth(6);
         return mPaintLine;
     }
 
@@ -165,7 +171,7 @@ public class MyView6 extends View {
     private Paint initPaintRect(){
         mPaintRect.setColor(Color.BLACK);
         mPaintRect.setStyle(Paint.Style.STROKE);
-        mPaintRect.setStrokeWidth(2);
+        mPaintRect.setStrokeWidth(5);
         return mPaintRect;
     }
 

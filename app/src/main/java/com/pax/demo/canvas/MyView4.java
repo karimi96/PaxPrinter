@@ -20,6 +20,7 @@ public class MyView4 extends View {
     Paint mPaintNormal;
     Paint mPaintLine;
     Paint mPaintRect;
+    Paint mPaintBack;
     Typeface typefaceText;
     Typeface typefaceNastaliq;
 
@@ -36,6 +37,7 @@ public class MyView4 extends View {
         mPaintDate = new Paint();
         mPaintLine = new Paint();
         mPaintRect = new Paint();
+        mPaintBack = new Paint();
         imagePhone = context.getResources().getDrawable(R.drawable.phone_call);
 
     }
@@ -48,6 +50,10 @@ public class MyView4 extends View {
         mCanvas = canvas;
         typefaceText = Typeface.create(Typeface.createFromAsset(context.getAssets(), "fonts/iran_sans.ttf"), Typeface.BOLD);
         typefaceNastaliq = Typeface.create(Typeface.createFromAsset(context.getAssets(), "fonts/IranNastaliq.ttf"), Typeface.BOLD);
+
+        mPaintBack.setStyle(Paint.Style.FILL);
+        mPaintBack.setColor(Color.WHITE);
+        canvas.drawPaint(mPaintBack);
 
         setTitle("فروشگاه رفاه", x - 30, 150, Paint.Align.RIGHT);
 
@@ -118,7 +124,7 @@ public class MyView4 extends View {
     private Paint initPaintRect(){
         mPaintRect.setColor(Color.BLACK);
         mPaintRect.setStyle(Paint.Style.STROKE);
-        mPaintRect.setStrokeWidth(2);
+        mPaintRect.setStrokeWidth(5);
         return mPaintRect;
     }
 
@@ -159,7 +165,7 @@ public class MyView4 extends View {
 
     private Paint intiPaintLine() {
         mPaintLine.setColor(Color.BLACK);
-        mPaintLine.setStrokeWidth(1);
+        mPaintLine.setStrokeWidth(6);
         return mPaintLine;
     }
 

@@ -48,6 +48,7 @@ public class MyView2 extends View {
         int x = getWidth();
         int y = getHeight();
         int oy = getWidth();
+//        int s = 0;
         int s = (y - x) / 2;
         Log.e("111", "onDraw: X =" + x);
         Log.e("111", "onDraw: oy =" + oy);
