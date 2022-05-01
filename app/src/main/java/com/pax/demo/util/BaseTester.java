@@ -27,7 +27,7 @@ public class BaseTester {
     }
 
     public void clear() {
-        FloatView.clearLog();
+//        FloatView.clearLog();
     }
 
 //    public String getLog() {
